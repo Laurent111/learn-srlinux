@@ -142,7 +142,7 @@ At this moment, the configured interfaces can not be used as they are not yet as
     A:spine1# /network-instance default interface ethernet-1/2.0                              
     
     --{ +* candidate shared default }--[ network-instance default interface ethernet-1/2.0 ]--
-    A:spine2# commit now                                                                      
+    A:spine1# commit now                                                                      
     All changes have been committed. Leaving candidate mode.
     ```
 
@@ -150,15 +150,15 @@ When interfaces are owned by the network-instance `default`, we can ensure that 
 
 ```
 --{ + running }--[  ]--                                     
-A:spine1# ping 192.168.12.1 network-instance default        
+A:spine1# ping 192.168.11.1 network-instance default        
 Using network instance default
 PING 192.168.12.1 (192.168.12.1) 56(84) bytes of data.
-64 bytes from 192.168.12.1: icmp_seq=1 ttl=64 time=31.4 ms
-64 bytes from 192.168.12.1: icmp_seq=2 ttl=64 time=10.0 ms
-64 bytes from 192.168.12.1: icmp_seq=3 ttl=64 time=13.1 ms
-64 bytes from 192.168.12.1: icmp_seq=4 ttl=64 time=16.5 ms
+64 bytes from 192.168.11.1: icmp_seq=1 ttl=64 time=31.4 ms
+64 bytes from 192.168.11.1: icmp_seq=2 ttl=64 time=10.0 ms
+64 bytes from 192.168.11.1: icmp_seq=3 ttl=64 time=13.1 ms
+64 bytes from 192.168.11.1: icmp_seq=4 ttl=64 time=16.5 ms
 ^C
---- 192.168.12.1 ping statistics ---
+--- 192.168.11.1 ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 3003ms
 rtt min/avg/max/mdev = 10.034/17.786/31.409/8.199 ms
 ```
